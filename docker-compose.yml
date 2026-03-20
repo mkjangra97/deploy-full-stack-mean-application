@@ -19,8 +19,8 @@ services:
 
   # Node.js / Express Backend
   backend:
-    image: manishjangra97/full-stack-mean-application-backend:latest
-    container_name: crud-backend
+    build: ./backend
+    image: crud-backend:latest
     restart: unless-stopped
     # environment:
     #   - PORT=8080
@@ -32,8 +32,8 @@ services:
 
   # Angular Frontend
   frontend:
-    image: manishjangra97/full-stack-mean-application-frontend:latest
-    container_name: crud-frontend
+    build: ./frontend
+    image: crud-frontend:latest
     restart: unless-stopped
     depends_on:
       - backend
