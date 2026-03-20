@@ -6,6 +6,7 @@ RUN npm install
 
 COPY . .
 RUN npm run build -- --configuration production
+RUN apk update && apk upgrade libexpat
 
 FROM nginx:stable-alpine
 RUN rm -rf /usr/share/nginx/html/*
